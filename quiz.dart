@@ -7,26 +7,27 @@ class Quiz extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  child: Text("Training",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            Container(
+              color: Colors.transparent,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                    Text("Training",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  Row(
+                    children: [
+                      Icon(Icons.chevron_left),
+                      Icon(Icons.calendar_month, size: 21),
+                      Icon(Icons.chevron_right),
+                    ],
                   ),
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.chevron_left),
-                    Icon(Icons.calendar_month, size: 21),
-                    Icon(Icons.chevron_right),
-                  ],
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(height: 10),
             Row(
@@ -34,7 +35,7 @@ class Quiz extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Your Program",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
                 ),
                 Text("Details>",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue),
@@ -42,82 +43,148 @@ class Quiz extends StatelessWidget {
               ],
             ),
             SizedBox(height: 10),
-            Container(width: double.infinity, height: 250,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration: BoxDecoration( 
-                borderRadius: BorderRadius.only(topRight: Radius.circular(120),
-                topLeft: Radius.circular(20), bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)
-                ),
-                gradient: LinearGradient(colors: [const Color.fromARGB(255, 158, 13, 184), Colors.white],
-                begin: Alignment.centerLeft, 
-                end: Alignment.bottomRight),
-                ),
-                  child: Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Next Workout",
-                        style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
-                        ),
-                        Text("Lets Toning",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
-                        ),
-                        Text("and Glutes Workout",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
-                        ),
-                        SizedBox(height: 30),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+            Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.centerLeft, end: Alignment.centerRight,
+                      colors: [
+                         const Color.fromARGB(255, 174, 22, 201),
+                         const Color.fromARGB(255, 212, 167, 236),
+                      ],),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(90), bottomRight: Radius.circular(15),
+                      topLeft: Radius.circular(15), bottomLeft: Radius.circular(15)),
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                          Text("Next Workout",
+                          style: TextStyle(fontWeight: FontWeight.bold, 
+                          color: Colors.white),
+                          ),
+                          Text("Lets Toning",
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,
+                          color: Colors.white),
+                          ),
+                          Text("and Glutes Workout",
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,
+                          color: Colors.white),
+                          ),
+
+                        SizedBox(height: 20),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                color: Colors.transparent,
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.timer, color: Colors.white,size: 15),
+                                    Text("60 min",
+                                    style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                width: 40, height: 40,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(35)),
+                                  color: Colors.white,
+                                ),
+                                child: Icon(Icons.play_arrow, color: Colors.purple,),
+                              ),
+                            ],
+                          ),                
+                        ],
+                      ),
+                    ),
+                SizedBox(height: 10),
+                Stack(
+                  children: [
+                      Container(
+                        width: 490, height: 120,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("gambar/card.jpg"),
+                            fit: BoxFit.cover
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Icon(Icons.timer, color: Colors.white),
-                                Text("60 min",
-                                style: TextStyle(color: Colors.white),
+                                SizedBox(width: 200),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("You are doing great",
+                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,
+                                    color: Colors.blue),
+                                    ),
+                                    Text("keep it up",
+                                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                                    ),
+                                    Text("stick to your plan",
+                                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(right: 35),
-                                  width: 40, height: 40,
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(45)),
-                                  color: Colors.white),
-                                  child: Icon(Icons.play_arrow, color: Colors.purple),
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              Stack(
-                children: [
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.white, borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("You are doing great",
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.blue),
-                        ),
-                        Text("keep it up",
-                        style: TextStyle(fontSize: 14, color: Colors.black),
-                        ),
-                        Text("stick to your plan",
-                        style: TextStyle(fontSize: 14, color: Colors.black),
+                        Positioned(left: 15, top: 0,
+                        child: Image.asset("gambar/figure1.png", height: 100),
                         ),
                       ],
                     ),
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text("Area of Focus",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 100,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          image: DecorationImage(
+                            image: AssetImage("gambar/ex3.png"),
+                            fit: BoxFit.contain
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                        height: 100,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          image: DecorationImage(
+                            image: AssetImage("gambar/ex4.png"),
+                          fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
-                  
-                ],
-              ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
