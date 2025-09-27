@@ -50,10 +50,12 @@ class Quiz extends StatelessWidget {
                       colors: [
                          const Color.fromARGB(255, 174, 22, 201),
                          const Color.fromARGB(255, 212, 167, 236),
-                      ],),
+                      ],
+                    ),
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(90), bottomRight: Radius.circular(15),
-                      topLeft: Radius.circular(15), bottomLeft: Radius.circular(15)),
+                      topLeft: Radius.circular(15), bottomLeft: Radius.circular(15),
+                    ),
                   ),
                   padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                   child: Column(
