@@ -75,8 +75,8 @@ class Quiz extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const Spacer(),
-                            Column(
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
                                   margin: EdgeInsets.only(right: 35),
